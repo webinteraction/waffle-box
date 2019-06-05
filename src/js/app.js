@@ -6,4 +6,5 @@ const dropdowns = new Toggle({
   toggleContainer: '.dropdown',
   blur: true,
   single: true,
+  keyControl: true,
 })
