@@ -1,4 +1,8 @@
 import { Toggle } from './toggle'
 
-// Toggles
-const toggles = new Toggle()
+// Dropdowns
+const dropdowns = new Toggle({
+  attr: 'data-dropdown',
+  toggleContainer: '.dropdown',
+  blur: true,
+})
