@@ -4,7 +4,7 @@
 }
 
 .dropdown-menu {
-  background: $dark;
+  background: darken($dark, 5%);
   border-radius: 0 0 $radius $radius;
   box-shadow: 0 12px 15px transparentize($darkest, .7);
   left: 0;
