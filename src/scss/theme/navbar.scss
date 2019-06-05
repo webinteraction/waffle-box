@@ -1,0 +1,22 @@
+// Navbar
+.navbar {
+  background: $dark;
+  color: $lightest;
+  padding: 0 $app-padding $app-padding;
+
+  @media (min-width: $screen-md) {
+    align-items: center;
+    display: flex;
+    height: $navbar-height;
+    justify-content: space-between;
+    padding: 0 $app-padding;
+  }
+}
+
+// Brand
+.brand {
+  color: $lightest;
+  line-height: $navbar-height;
+  margin: 0;
+  text-align: center;
+}

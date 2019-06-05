@@ -1,0 +1,13 @@
+// Columns layout
+.columns {
+  display: grid;
+  grid-row-gap: 15px;
+  margin: auto;
+  max-width: $screen-lg;
+  padding: 30px 0;
+
+  @media (min-width: $screen-lg) {
+    grid-column-gap: 30px;
+    grid-template-columns: 60% auto;
+  }
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WaffleBox</title>
+  <link rel="stylesheet" href="scss/theme/theme.scss">
+  <link rel="stylesheet" href="scss/app.scss">
+</head>
+<body class="app-container">
+  <div id="app" class="app-frame">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <!-- Brand -->
+      <h1 class="brand"><strong>Waffle</strong>Box</h1>
+
+      <!-- Menu -->
+      <ul id="menu" class="menu horizontal">
+        <li class="dropdown">
+          <a href="#waffles" class="menu-item lg">Waffles <span class="tri" aria-hidden="true">&rtrif;</span></a>
+          <ul id="waffles" class="menu dropdown-menu">
+            <li><a class="menu-item">Belgium Style</a></li>
+            <li><a class="menu-item">Fruit Toppings</a></li>
+            <li><a class="menu-item">Stuffed Waffles</a></li>
+            <li><a class="menu-item">Chicken Waffles</a></li>
+            <li><a class="menu-item">Falafel Waffle</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#gifts" class="menu-item lg">Waffle Gifts <span class="tri" aria-hidden="true">&rtrif;</span></a>
+          <ul id="gifts" class="menu dropdown-menu">
+            <li><a class="menu-item">Send a Waffle-Gram</a></li>
+            <li><a class="menu-item">Waffle Bouquets</a></li>
+            <li><a class="menu-item">Waffle Apparel</a></li>
+            <li><a class="menu-item">Waffle Accessories</a></li>
+          </ul>
+        </li>
+        <li><a class="menu-item lg">Pricing</a></li>
+        <li><a class="menu-item subscribe">Subscribe</a></li>
+      </ul>
+    </nav>
+
+    <!-- Page -->
+    <main class="page">
+
+      <!-- Hero -->
+      <section class="hero">
+        <figure class="hero-image">
+          <img src="https://images.unsplash.com/photo-1512056068661-14ef8b6bfabe?auto=format&fit=crop&w=1600&h=800&q=80" alt="Waffles">
+        </figure>
+        <div class="hero-content">
+          <h1><span>Never</span> leave your house again.</h1>
+          <p>We’ve got you covered. We’ll send a mountain of waffles to your door every single morning. They won’t look like this, but they’ll probably be pretty good.</p>
+        </div>
+      </section>
+
+      <!-- Choose a plan -->
+      <div class="plan">
+
+        <!-- Plan dropdown -->
+        <div class="dropdown">
+          <button class="info">
+            <span class="label">Choose a Plan&hellip;</span>
+            <span class="tri" aria-hidden="true">&rtrif;</span>
+          </button>
+          <ul id="plans" class="menu dropdown-menu">
+            <li><a class="menu-item">WaffleBox</a></li>
+            <li><a class="menu-item">WaffleBox <strong>Plus</strong></a></li>
+            <li><a class="menu-item">WaffleBox <strong>Mega</strong></a></li>
+            <li><a class="menu-item">WaffleBox <strong>Insane</strong></a></li>
+          </ul>
+        </div>
+
+        <!-- Purchase modal -->
+        <div class="modal">
+          <button id="subscribe" class="success" disabled>Subscribe</button>
+        </div>
+
+      </div>
+
+      <div class="columns">
+
+        <!-- Main column -->
+        <div class="col-main">
+
+          <!-- Benefits -->
+          <div class="benefits card">
+            <div class="benefit">
+              <div class="check" aria-hidden="true">&check;</div>
+              <div class="benefit-content">
+                <h2>It’s okay. Be lazy.</h2>
+                <p>Why waste time moving your lethargic body to do menial tasks like buying groceries or making food? You just sit tight and eat some waffles.</p>
+              </div>
+            </div>
+
+            <div class="benefit">
+              <div class="check" aria-hidden="true">&check;</div>
+              <div class="benefit-content">
+                <h2>They’re pretty good.</h2>
+                <p>We’re not out to win a waffle award or anything, but we think our waffles are pretty good. Mediocre waffles are better than no waffles.</p>
+              </div>
+            </div>
+
+            <div class="benefit">
+              <div class="check" aria-hidden="true">&check;</div>
+              <div class="benefit-content">
+                <h2>That’s a lot of waffles.</h2>
+                <p>Portions are kind of our <em>thing</em>. You won’t be caught hungry after stuffing your face with over two pounds of waffles every single morning.</p>
+              </div>
+            </div>
+
+            <div class="benefit">
+              <div class="check" aria-hidden="true">&check;</div>
+              <div class="benefit-content">
+                <h2>They last forever.</h2>
+                <p>These things are so chock-full of preservatives, they’ll never go bad. You won’t find any natural ingredients in these waffles.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="col-sidebar">
+
+          <!-- FAQs -->
+          <div class="faqs card">
+            <h2><span class="question-mark">?</span> FAQs</h2>
+
+            <h3>How many waffles will I get?</h3>
+            <p>We’ll send you over two pounds of waffles every single morning. Oh yeah, that’s a lot of waffles.</p>
+
+            <h3>I’m really hungry. Can I buy extra waffles?</h3>
+            <p>Wow, that’s some appetite you’ve got there! Just click the &ldquo;I’m really hungry&rdquo; checkbox during checkout.</p>
+
+            <h3>Are they healthy?</h3>
+            <p>Nope.</p>
+
+            <h3>I like syrup. Do I get syrup?</h3>
+            <p>Every delivery comes with two gallons of pure fructose corn syrup. Need more syrup? Just click the &ldquo;Slather me in syrup&rdquo; checkbox during checkout.</p>
+
+          </div>
+        </aside>
+      </div>
+
+    </main>
+
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>

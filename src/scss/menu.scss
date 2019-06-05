@@ -1,0 +1,55 @@
+// Menu
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: $screen-md) {
+    &.horizontal {
+      align-items: center;
+      display: flex;
+    }
+  }
+}
+
+// Menu items
+.menu-item {
+  color: $lightest;
+  cursor: pointer;
+  display: block;
+  padding: 8px 20px;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    background-color: transparentize($darkest, .9);
+    color: $primary;
+  }
+
+  &.lg {
+    font-size: 18px;
+    font-weight: 200;
+    line-height: $navbar-height;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
+
+// Subscribe
+.subscribe {
+  background: $primary;
+  border-radius: 20px;
+  box-shadow: 0 ($radius * -.75) 0 inset transparentize($darkest, .95);
+  font-weight: 600;
+  letter-spacing: .03em;
+  text-shadow: 1px 1px 0 transparentize($darkest, .9);
+  text-transform: uppercase;
+  transition: background-color $t ease, transform $t cubic-bezier(.74, .13, .4, 2.01);
+
+  &:hover,
+  &:focus {
+    background-color: darken($primary, 5%);
+    color: $lightest;
+    transform: scale(1.07);
+  }
+}
