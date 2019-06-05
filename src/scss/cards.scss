@@ -1,0 +1,11 @@
+// Card
+.card {
+  background: $lightest;
+  border-radius: $radius;
+  box-shadow: 0 2px 1px transparentize($darker, .95);
+  padding: 30px;
+
+  + .card {
+    margin-top: 15px;
+  }
+}

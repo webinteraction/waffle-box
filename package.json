@@ -1,0 +1,15 @@
+{
+  "name": "waffle-box",
+  "version": "1.0.0",
+  "description": "Piping hot waffles delivered to your door every morning.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "parcel src/index.html --open"
+  },
+  "author": "@kyleschaeffer",
+  "license": "MIT",
+  "dependencies": {
+    "parcel": "^1.12.4",
+    "sass": "^1.26.3"
+  }
+}

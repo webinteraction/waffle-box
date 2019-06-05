@@ -1,0 +1,32 @@
+// Benefits
+.benefit {
+  display: grid;
+  grid-template-columns: 70px auto;
+
+  + .benefit {
+    margin-top: 30px;
+  }
+
+  .check {
+    background: $primary;
+    border-radius: 50%;
+    color: $darker;
+    font-size: 28px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    width: 50px;
+  }
+
+  .benefit-content {
+    h2 {
+      font-weight: 800;
+      letter-spacing: -.02em;
+      margin: 0 0 7px;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}

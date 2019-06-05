@@ -1,0 +1,33 @@
+// FAQs
+.faqs {
+  h2 {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  h3 {
+    font-size: 1em;
+    font-weight: 700;
+    margin: 24px 0 0;
+  }
+
+  p {
+    margin: 5px 0 0;
+  }
+}
+
+// Question mark
+.question-mark {
+  background: $primary;
+  border-radius: 50%;
+  color: $darker;
+  display: inline-block;
+  font-size: 24px;
+  height: 28px;
+  line-height: 28px;
+  margin: -6px 5px 0 0;
+  text-align: center;
+  vertical-align: middle;
+  width: 28px;
+}
