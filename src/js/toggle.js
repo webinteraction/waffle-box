@@ -15,6 +15,8 @@ export class Toggle {
     this.config = Object.assign({
       attr: 'data-toggle',
       blur: false,
+      dismiss: true,
+      dismissAttr: 'data-dismiss',
       expandOnly: false,
       keyControl: false,
       keyEscape: true,
@@ -172,11 +174,17 @@ export class Toggle {
    * @return {void}
    */
   blurClick (e) {
+    // Dismiss click?
+    const dismissClick = this.config.dismiss && e.target.matches(`[${this.config.dismissAttr}], [${this.config.dismissAttr}] *`)
+
     // Blur not enabled
-    if (!this.config.blur) return
+    if (!this.config.blur && !dismissClick) return
 
     // Blur active toggle buttons
     this.getActiveButtons().forEach(activeBtn => {
+      // Dismiss click
+      if (dismissClick) return this.toggle(activeBtn)
+
       // Get toggle container
       const activeContainer = activeBtn.closest(this.config.toggleContainer)
 
@@ -225,6 +233,8 @@ export class Toggle {
  * @typedef {Object} Options
  * @property {string} attr - Toggle button attribute name
  * @property {boolean} blur - Enable click-away blurring
+ * @property {boolean} dismiss - Enable dismiss buttons
+ * @property {string} dismissAttr - Dismiss button attribute name
  * @property {boolean} expandOnly - Disable collapsing of expanded targets
  * @property {boolean} keyControl - Enable keyboard control
  * @property {boolean} keyEscape - Enable keyboard toggle escape

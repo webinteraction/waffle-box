@@ -25,6 +25,7 @@
   overflow-y: auto;
   padding: 15px;
   pointer-events: all;
+  position: relative;
 
   @media (min-width: $screen-md) {
     padding: 30px;
@@ -47,6 +48,32 @@
 
   > * + * {
     margin-left: 8px;
+  }
+}
+
+.modal-dialog-title {
+  padding-right: 40px;
+}
+
+// Close button
+.close {
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: none;
+  color: $medium;
+  font-size: 24px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  position: absolute;
+  right: 10px;
+  text-shadow: none;
+  top: 10px;
+  width: 40px;
+
+  &:hover,
+  &:focus {
+    background-color: transparentize($darkest, .95);
   }
 }
 
