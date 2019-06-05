@@ -53,20 +53,3 @@
     transform: scale(1.07);
   }
 }
-
-// Small screen menu toggle
-.visible-sm {
-  display: none;
-}
-
-@media (max-width: $screen-md) {
-  .visible-sm {
-    display: block;
-  }
-
-  #menu {
-    &:not(.active-sm) {
-      display: none;
-    }
-  }
-}
