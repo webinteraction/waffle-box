@@ -9,6 +9,7 @@ export class Toggle {
       single: false,
       singleContainer: undefined,
       expandOnly: false,
+      blur: false,
       onToggle: (btn, target, isToggled) => {},
     }, options)
 
@@ -20,8 +21,9 @@ export class Toggle {
 
   // Initialize component
   init () {
-    // Click listener
+    // Add listeners
     document.addEventListener('click', e => this.toggle(e))
+    document.addEventListener('click', e => this.blur(e))
   }
 
   /**
@@ -70,5 +72,23 @@ export class Toggle {
 
     // Fire onToggle event
     this.config.onToggle(btn, target, isToggled)
+  }
+
+  /**
+   * Blur on click-away
+   * @param {MouseEvent} e - Click event
+   */
+  blur (e) {
+    // Blur not enabled
+    if (!this.config.blur) return
+
+    // Blur active toggle buttons
+    document.querySelectorAll(`[${this.config.attr}][aria-expanded="true"]`).forEach(activeBtn => {
+      // Get toggle container
+      const activeContainer = activeBtn.closest(this.config.toggleContainer)
+
+      // Blur if click target isn't inside the container
+      if (!activeContainer.contains(e.target)) activeBtn.click()
+    })
   }
 }

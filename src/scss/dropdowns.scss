@@ -1,4 +1,45 @@
 // Dropdown menus
+.dropdown {
+  position: relative;
+}
+
 .dropdown-menu {
-  display: none;
+  background: $dark;
+  border-radius: 0 0 $radius $radius;
+  box-shadow: 0 12px 15px transparentize($darkest, .7);
+  left: 0;
+  min-width: 100%;
+  padding: 15px 0 20px;
+  position: absolute;
+  top: 100%;
+  width: 200px;
+  z-index: 10;
+
+  &:not(.active) {
+    display: none;
+  }
+
+  // Alignment
+  &.align-right {
+    left: auto;
+    right: 0;
+  }
+
+  // Size
+  &.sm {
+    width: 150px;
+  }
+
+  &.lg {
+    width: 250px;
+  }
+}
+
+// Triangle
+.tri {
+  transition: transform .3s ease;
+
+  [aria-expanded='true'] & {
+    transform: rotate(90deg);
+  }
 }
