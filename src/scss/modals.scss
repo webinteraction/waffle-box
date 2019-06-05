@@ -1,0 +1,57 @@
+// Modal dialogs
+.modal-overlay {
+  align-items: center;
+  background: transparentize($darkest, .3);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  padding: 15px;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+
+  &:not(.active) {
+    display: none;
+  }
+}
+
+.modal-dialog {
+  background: $lightest;
+  border-radius: $radius;
+  max-height: calc(100vh - 30px);
+  overflow-y: auto;
+  padding: 15px;
+  pointer-events: all;
+
+  @media (min-width: $screen-md) {
+    padding: 30px;
+    width: 500px;
+
+    // Sizes
+    &.sm {
+      width: 300px;
+    }
+
+    &.lg {
+      width: 600px;
+    }
+  }
+}
+
+.modal-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+
+  > * + * {
+    margin-left: 8px;
+  }
+}
+
+// Disable body scroll
+.has-modal {
+  overflow: hidden;
+  padding-right: 15px;
+}
