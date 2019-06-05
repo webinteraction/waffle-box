@@ -17,6 +17,7 @@ const modals = new Toggle({
   keyNavigation: false,
   single: true,
   toggleContainer: '.modal',
+  trapFocus: true,
   onToggle: (btn, target, isToggled) => {
     document.body.classList[isToggled ? 'add' : 'remove']('has-modal')
   },
