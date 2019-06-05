@@ -10,6 +10,9 @@ export class Toggle {
       singleContainer: undefined,
       expandOnly: false,
       blur: false,
+      keyControl: false,
+      keyEscape: true,
+      keyNavigation: true,
       onToggle: (btn, target, isToggled) => {},
     }, options)
 
@@ -24,6 +27,7 @@ export class Toggle {
     // Add listeners
     document.addEventListener('click', e => this.toggle(e))
     document.addEventListener('click', e => this.blur(e))
+    document.addEventListener('keydown', e => this.keydown(e))
   }
 
   /**
@@ -90,5 +94,47 @@ export class Toggle {
       // Blur if click target isn't inside the container
       if (!activeContainer.contains(e.target)) activeBtn.click()
     })
+  }
+
+  /**
+   * Keydown listener
+   * @param {KeyboardEvent} e - Keydown event
+   * @return {void}
+   */
+  keydown (e) {
+    // Key control not enabled
+    if (!this.config.keyControl) return
+
+    // Get closest toggle container
+    const toggleContainer = e.target.closest(this.config.toggleContainer)
+    if (!toggleContainer) return
+
+    // Dismiss on escape
+    if (this.config.keyEscape && e.key === 'Escape') {
+      e.preventDefault()
+      toggleContainer.querySelectorAll(`[${this.config.attr}][aria-expanded="true"]`)
+        .forEach(activeBtn => activeBtn.click())
+    }
+
+    // Navigate on arrow keys
+    else if (this.config.keyNavigation && (e.key === 'ArrowUp' || e.key === 'ArrowDown')) {
+      e.preventDefault()
+
+      // Get focusables in container
+      const focusables = toggleContainer.querySelectorAll('button, [href]')
+
+      // Get current focus index
+      let focusIndex = 0
+      for (let i = 0; i < focusables.length; i++) {
+        if (focusables[i] === e.target) {
+          focusIndex = i
+          break
+        }
+      }
+
+      // Focusable navigation
+      const nextFocusIndex = focusIndex + (e.key === 'ArrowUp' ? -1 : 1)
+      if (nextFocusIndex >= 0 && nextFocusIndex < focusables.length) focusables[nextFocusIndex].focus()
+    }
   }
 }
