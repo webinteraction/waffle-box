@@ -7,10 +7,3 @@ const dropdowns = new Toggle({
   blur: true,
   single: true,
 })
-
-// Toggle menu
-const toggleMenu = new Toggle({
-  attr: 'data-menu-toggle',
-  toggleContainer: '.menu-toggle',
-  toggleClass: 'active-sm',
-})
