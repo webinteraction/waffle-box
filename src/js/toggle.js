@@ -26,6 +26,7 @@ export class Toggle {
       singleContainer: undefined,
       toggleClass: 'active',
       toggleContainer: '.toggle',
+      trapFocus: false,
     }, options)
 
     // Initialize component
@@ -225,6 +226,18 @@ export class Toggle {
         focusData.focusables[nextFocusIndex].focus()
       }
     }
+
+    // Trap focus on tab
+    else if (this.config.trapFocus && e.key === 'Tab') {
+      // Get focus data
+      const focusData = this.getFocusables(toggleContainer, e.target)
+
+      // Trap focus
+      if (focusData.focusIndex >= focusData.focusables.length - 1) {
+        e.preventDefault()
+        focusData.focusables[1].focus()
+      }
+    }
   }
 }
 
@@ -244,6 +257,7 @@ export class Toggle {
  * @property {string} singleContainer - Selector for closest container that wraps all sibling toggles
  * @property {string} toggleClass - CSS class that is toggled on the target element
  * @property {string} toggleContainer - Selector for closest container that wraps both the toggle button and target
+ * @property {boolean} trapFocus - Enable toggle target focus trapping
  */
 
 /**
